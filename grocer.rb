@@ -57,7 +57,6 @@ def apply_coupons(cart, coupons)
   cart
 end
 
-
 def apply_clearance(cart)
  counter = 0
  while counter < cart.length do
@@ -79,8 +78,10 @@ def checkout(cart, coupons)
     total += final_cart[counter][:price] * final_cart[counter][:count]
     counter += 1
   end
+  #now apply discount of 10% if the total is over $100
   if total > 100
     total -= (total * 0.10)
   end
   total
 end
+#whoa
